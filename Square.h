@@ -10,12 +10,18 @@ class Square
 {
 private:
     bool press = false;
+    int near_mine = 0;
+
 protected:
     bool isMine;
+
 public:
     Square();
-    bool getIsMine();
-    int near_mine = 0;
+    virtual ~Square() = default;
+
     virtual void display();
+    bool getIsMine();
+    int getNumNearbyMine();
+    void setNumNearbyMine(int x);
     virtual void squarePressed(int& count);
 };

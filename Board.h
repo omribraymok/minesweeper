@@ -10,17 +10,31 @@
 
 using namespace std;
 
-const int N = 4;
+const int N = 8;
+
+struct RowColExpands
+{
+    int row;
+    int col;
+};
 
 class Board
 {
 private:
 public:
-    int mine_count = 0;
-    Square* board[N][N];
     Board();
     ~Board();
+
+    int mine_count = 0;
+    Square* board[N][N];
+
+    void boardExpands(int row_num, int col_num);
     void boardSetup();
-    void printBoard();
+    void cleanBoard();
     void countNearMine();
+    void expandToDownLeft(int row_num, int col_num);
+    void expandToDownRight(int row_num, int col_num);
+    void expandToUpLeft(int row_num, int col_num);
+    void expandToUpRight(int row_num, int col_num);
+    void printBoard();
 };

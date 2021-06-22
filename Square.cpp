@@ -16,15 +16,24 @@ void  Square::display()
 
     else
         cout << "*";
-
-}
-
-void Square::squarePressed(int& count)
-{
-    this->press = true;
 }
 
 bool Square::getIsMine()
 {
     return this->isMine;
+}
+
+int Square::getNumNearbyMine()
+{
+    return this->near_mine;
+}
+
+void Square::setNumNearbyMine(int count)
+{
+    this->near_mine = count;
+}
+
+void Square::squarePressed(int& count)
+{
+    this->press = true;
 }

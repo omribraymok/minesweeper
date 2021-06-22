@@ -21,7 +21,8 @@ void playGame(Board& board)
     cout << "Please enter two number, between 1 to " << N << ",separated by space:" << endl;
     cin >> i >> j;
     board.board[i][j]->squarePressed(board.mine_count);
-    system("cls"); //this is not a safe thing to do?
+    board.boardExpands(i, j);
+    system("cls"); // on WINDOWS, on Linux use system ("clear");
     board.printBoard();
     cout << "The remainder number of mine:" << board.mine_count << endl;
     cout << endl;
@@ -29,8 +30,8 @@ void playGame(Board& board)
 
 void newGame(Board& board)
 {
-    system("cls"); //this is not a safe thing to do?
-    board.~Board(); //this is right thing to do?
+    system("cls"); // on WINDOWS, on Linux use system ("clear"); 
+    board.cleanBoard();
     board.boardSetup();
     board.printBoard();
     cout << "The number of mine:" << board.mine_count << endl;
