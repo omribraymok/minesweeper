@@ -21,6 +21,7 @@ struct RowColExpands
 class Board
 {
 private:
+
 public:
     Board();
     ~Board();

@@ -188,7 +188,7 @@ void Board::expandToDownRight(int row_num, int col_num)
     bool flag_stop = false;
     for (i = row_num; i < N && !flag_stop; i++)
     {
-        for (j = col_num; j < col_num + (i - row_num) + 1; j++)
+        for (j = col_num; j <= col_num + (i - row_num); j++)
         {
             if (board[i][j]->getIsMine())
             {
@@ -232,7 +232,7 @@ void Board::expandToUpLeft(int row_num, int col_num)
     bool flag_stop = false;
     for (i = row_num; i >= 0 && !flag_stop; i--)
     {
-        for (j = col_num; j > col_num - (row_num - i) && j >= 0; j--)
+        for (j = col_num; j >= col_num - (row_num - i) && j >= 0; j--)
         {
             if (board[i][j]->getIsMine())
             {
@@ -276,7 +276,7 @@ void Board::expandToUpRight(int row_num, int col_num)
     bool flag_stop = false;
     for (i = row_num; i >= 0 && !flag_stop; i--)
     {
-        for (j = col_num; j < col_num + (row_num - i) + 1; j++)
+        for (j = col_num; j <= col_num + (row_num - i); j++)
         {
             if (board[i][j]->getIsMine())
             {

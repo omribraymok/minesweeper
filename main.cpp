@@ -18,7 +18,7 @@ void displayMenu()
 void playGame(Board& board)
 {
     int i, j;
-    cout << "Please enter two number, between 1 to " << N << ",separated by space:" << endl;
+    cout << "Please enter two number, between 0 to " << N - 1 << ",separated by space:" << endl;
     cin >> i >> j;
     board.board[i][j]->squarePressed(board.mine_count);
     board.boardExpands(i, j);
